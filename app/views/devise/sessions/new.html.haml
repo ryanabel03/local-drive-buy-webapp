@@ -1,0 +1,15 @@
+.well.span3.center.floatnone.extratop
+  %h2 Sign in
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .control-group
+      %label{for: "email"} Email
+      = f.email_field :email
+    .control-group
+      %label{for: "password"} Password
+      = f.password_field: :password
+    .control-group
+      %label.checkbox
+        = f.check_box :remember_me
+        Remember Me
+    .row
+      %button.btn.btn-primary.span3{type: "submit"} Sign in
