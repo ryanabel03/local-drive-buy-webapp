@@ -1,15 +1,15 @@
 .well.span3.center.floatnone.extratop
-  %h2 Sign in
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  %h2.extrabottom Sign in
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f|
     .control-group
-      %label{for: "email"} Email
+      %label{:for => "email"} Email 
       = f.email_field :email
     .control-group
-      %label{for: "password"} Password
-      = f.password_field: :password
+      %label{:for => "password"} Password
+      = f.password_field :password
     .control-group
       %label.checkbox
         = f.check_box :remember_me
-        Remember Me
+        Remember me
     .row
-      %button.btn.btn-primary.span3{type: "submit"} Sign in
+      %button.btn.btn-primary.span3{:type => "submit"} Sign in

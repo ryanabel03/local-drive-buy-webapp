@@ -1,1 +1,10 @@
+@import 'colors';
+
 @import "twitter/bootstrap";
+
+.well {
+  background-color: $notWhite;
+  border: 1px solid $gray1;
+  padding: 10px 19px 10px 19px;
+}
+

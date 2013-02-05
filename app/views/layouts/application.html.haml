@@ -1,8 +1,10 @@
 !!! 5
 %html
-	%body
-		- if notice.present?
-			%p{:class => "notice"}= notice
-		- if alert.present?
-			%p{:class => "alert"}= alert
-		= yield
+  %head
+    = render partial: "shared/header"
+  %body
+    - if notice.present?
+      %p{:class => "notice"}= notice
+    - if alert.present?
+      %p{:class => "alert"}= alert
+    = yield
