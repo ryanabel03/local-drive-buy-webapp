@@ -2,7 +2,7 @@ require "spec_helper"
 
 
 describe "Users" do
-  it "redirects a user to their profile when they login" do
+  it "redirects a user to their listings when they login" do
     visit root_path
 
     page.should have_content "You need to sign"
@@ -14,6 +14,6 @@ describe "Users" do
 
     click_button "Sign in"
 
-    page.should have_content "Profile"
+    page.should have_content "Your Listings"
   end
 end

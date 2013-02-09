@@ -1,0 +1,40 @@
+%h2 Your Listings
+%button.btn#add-listing-btn Add Listing
+
+#add-listing-modal.modal.hide.fade
+  .form.form-horizontal
+    .modal-header
+      %button.close{type: "button", data: {dismiss: "modal"}} &times;
+      %h3 Add Listing
+    .modal-body
+      .control-group
+        %label.control-label{for: "listings_title"} Listing Title
+        .controls
+          = text_field :listings, :title
+      .control-group
+        %label.control-label{for: "listings_description"} Description
+        .controls
+          = text_area :listings, :description
+      .control-group
+        %label.control-label{for: "listings_address_one"} Address 
+        .controls
+          = text_field :listings, :address_one
+      .control-group
+        %label.control-label{for: "listings_address_two"} Line 2
+        .controls
+          = text_field :listings, :address_two
+      .control-group
+        %label.control-label{for: "listings_city"} City 
+        .controls
+          = text_field :listings, :city
+      .control-group
+        %label.control-label{for: "listings_state"} State
+        .controls
+          = select :listings, :state, states
+      .control-group
+        %label.control-label{for: "listings_zip"} Zip Code 
+        .controls
+          = text_field :listings, :zip
+    .modal-footer
+      %a.btn#cancel-save-listing{href: "#", data: {dismiss: "modal"}} Close
+      %button.btn.btn-primary#create-listing-btn Create
