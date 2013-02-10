@@ -55,4 +55,13 @@ module ListingsHelper
       ['Wyoming', 'WY']
     ]
   end
+
+  def categories
+    [
+      "Free",
+      "Farmer's Market",
+      "Brewery/Winery",
+      "Road Stand/Edibles"
+    ]
+  end
 end

@@ -16,6 +16,7 @@ describe "Listings" do
     page.should have_content "City"
     page.should have_content "State"
     page.should have_content "Zip Code"
+    page.should have_content "Categories"
     # page.should have_content "Image"
 
     fill_in "Listing Title", with: "My Listing"
