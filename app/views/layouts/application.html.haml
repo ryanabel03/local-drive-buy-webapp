@@ -8,6 +8,10 @@
         %a.brand{href: "#"}
         %ul.nav
           = nav_link "Listings", href: listings_path, tab: :listings
+        %ul.nav
+          = nav_link "Sign Up", tab: :password
+        %ul.nav
+          = nav_link "Sign In", tab: :password
     - if notice.present?
       %p{:class => "notice"}= notice
     - if alert.present?
