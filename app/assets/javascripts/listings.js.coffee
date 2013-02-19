@@ -2,3 +2,25 @@ $ = jQuery
 $ ->
   $("#add-listing-btn").click (e) ->
     $("#add-listing-modal").modal("show")
+
+
+  $("#create-listing-btn").click (e) ->
+    e.preventDefault()
+    data =
+      title: $("#listings_title").val()
+      description: $("#listings_description").val()
+      address: $("#listings_address_one").val()
+      city: $("#listings_city").val()
+      state: $("#listings_state").val()
+      zip: $("#listings_zip").val()
+      category: selectedCategories()
+      filters: selectedFilters()
+
+    $.ajax
+      url: Routes.listings_path()
+      type: "POST"
+      contentType: "application/json"
+      data: JSON.stringify {data: data}
+      dataType: "json"
+    .done(response) ->
+      console.log(response)

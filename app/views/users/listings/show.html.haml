@@ -14,7 +14,7 @@
       .control-group
         %label.control-label{for: "listings_description"} Description
         .controls
-          = text_area :listings, :description
+          = text_area :listings, :description, rows: 5
       %label.checkbox.inline Categories
       - categories.each do |category|
         %input{type: "checkbox", id: category, value: category}=category
