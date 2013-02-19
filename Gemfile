@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'haml', '3.1.7'
 gem 'devise'
-gem 'js-routes'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
