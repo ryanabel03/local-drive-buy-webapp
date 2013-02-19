@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'haml', '3.1.7'
 gem 'devise'
+gem 'js-routes'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -27,6 +28,7 @@ group :test, :development do
   gem 'rspec-rails', "~> 2.0"
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'mocha', :require => false
 end
 
