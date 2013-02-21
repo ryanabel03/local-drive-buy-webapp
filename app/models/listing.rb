@@ -3,5 +3,5 @@ class Listing < ActiveRecord::Base
 
   validates_format_of :zip, with: /^\d{5}(-\d{4})?$/, message: "Invalid zip code"
 
-  validates_presence_of :title
+  validates_presence_of :title, :state, :description
 end
