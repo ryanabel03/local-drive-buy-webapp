@@ -3,7 +3,12 @@ require 'spec_helper'
 describe ListingsController do
 
   describe "#create" do
+    before do
+      sign_in_user
+    end
+
     context "with valid attributes" do
+
       it "creates a new listing" do
         expect {
           post :create, listing: attributes_for(:listing)

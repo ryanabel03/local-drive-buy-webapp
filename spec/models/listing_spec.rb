@@ -1,6 +1,14 @@
 require 'spec_helper'
 
 describe Listing do
+  let(:user) { create(:user) }
+
+  before { @listing = user.listings.build(attributes_for(:listing)) }
+
+  subject { @listing }
+
+  its(:user) { should == user }
+
   describe "validations" do
     it "validates zip code" do
       listing = build(:listing, zip: 333333)

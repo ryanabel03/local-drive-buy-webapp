@@ -16,4 +16,11 @@ FactoryGirl.define do
     f.state "MI"
     f.zip nil 
   end
+
+  factory :user do
+    sequence(:email) { |n| "Person_#{n}@somedomain.com" }
+    password "password"
+    password_confirmation "password"
+    remember_me true
+  end
 end
