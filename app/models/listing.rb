@@ -1,5 +1,5 @@
 class Listing < ActiveRecord::Base
-  attr_accessible :address, :city, :description, :state, :title, :zip
+  attr_accessible :address_one, :address_two, :city, :description, :state, :title, :zip
 
   validates_format_of :zip, with: /^\d{5}(-\d{4})?$/, message: "Invalid zip code"
 
