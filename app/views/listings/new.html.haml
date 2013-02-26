@@ -1,33 +1,34 @@
 %h2 Create A Listing
-.control-group
-  %label.control-label{for: "listings_title"} Listing Title
-  .controls
-    = text_field :listings, :title
-.control-group
-  %label.control-label{for: "listings_description"} Description
-  .controls
-    = text_area :listings, :description
-%label.checkbox.inline Categories
-- categories.each do |category|
-  %input{type: "checkbox", id: category, value: category}=category
-.control-group
-  %label.control-label{for: "listings_address_one"} Address 
-  .controls
-    = text_field :listings, :address_one
-.control-group
-  %label.control-label{for: "listings_address_two"} Line 2
-  .controls
-    = text_field :listings, :address_two
-.control-group
-  %label.control-label{for: "listings_city"} City 
-  .controls
-    = text_field :listings, :city
-.control-group
-  %label.control-label{for: "listings_state"} State
-  .controls
-    = select :listings, :state, states
-.control-group
-  %label.control-label{for: "listings_zip"} Zip Code 
-  .controls
-    = text_field :listings, :zip
-%button.btn-primary#create-listing-btn Create
+=form_tag listings_path, :class => "form-horizontal" do
+  .control-group
+    .control-label{for: "listings_title"}= label_tag(:title, "Title")
+    .controls
+      = text_field(:listings, :title)
+  .control-group
+    .control-label{for: "listings_description"}= label_tag(:description, "Description")
+    .controls
+      = text_area(:listings, :description)
+  %label.checkbox.inline Categories
+  - categories.each do |category|
+    %input{type: "checkbox", id: category, value: category}=category
+  .control-group
+    .control-label{for: "listings_address_one"}= label_tag(:address, "Address") 
+    .controls
+      = text_field(:listings, :address_one)
+  .control-group
+    .control-label{for: "listings_address_two"}= label_tag(:address_two, "Line 2")
+    .controls
+      = text_field(:listings, :address_two)
+  .control-group
+    .control-label{for: "listings_city"}= label_tag(:city, "City")
+    .controls
+      = text_field(:listings, :city)
+  .control-group
+    .control-label{for: "state"}= label_tag(:state, "State")
+    .controls
+      = select(:listings, :state, options_for_select(states))
+  .control-group
+    .control-label{for: "listings_zip"} Zip Code 
+    .controls
+      = text_field(:listings, :zip)
+  =submit_tag "Create", :class => "btn btn-primary"
