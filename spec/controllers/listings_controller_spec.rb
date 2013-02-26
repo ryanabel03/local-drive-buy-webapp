@@ -36,4 +36,19 @@ describe ListingsController do
       end
     end
   end
+
+  describe "#show" do
+    before do
+      sign_in_user
+    end
+
+    it "gets all listings for the current user" do
+      listings = mock "listings"
+      subject.current_user.expects(:listings).returns listings
+
+      get :show
+
+      assigns[:listings].should == listings
+    end
+  end
 end
