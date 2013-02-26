@@ -1,7 +1,7 @@
 class ListingsController < ApplicationController
 
   def show
-    @listings = Listing.all
+    @listings = current_user.listings 
   end
 
   def create

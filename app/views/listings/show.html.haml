@@ -1,6 +1,17 @@
 %h2 Your Listings
-%a.btn#add-listing-btn{href: new_listings_path} Add Listing
+.row
+  .div.span12
+    %a.btn#add-listing-btn{href: new_listings_path} Add Listing
+
 -@listings.each do |listing|
-  = listing.title
+  .row
+    .div.well.span12
+      %dl.dl-horizontal
+        %dt Title: 
+        %dd= listing.title
+        %dt Description:
+        %dd= listing.description
+
+
 
 
