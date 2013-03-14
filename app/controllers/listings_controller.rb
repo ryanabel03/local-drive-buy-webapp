@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  before_filter :authenticate_user!
 
   def show
     @listings = current_user.listings 

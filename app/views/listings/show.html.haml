@@ -1,13 +1,25 @@
-%h2 Your Listings
+%h2.offset1 Your Listings
 .row
-  .div.span12
-    %a.btn.extrabottom#add-listing-btn{href: new_listings_path} Add Listing
+  .div.extrabottom.offset12
+    =link_to image_tag("green-plus-sign-th.png", class: "add_listing_img", id: "add_listing_img"), new_listings_path() 
 
 -@listings.each do |listing|
   .row
-    .div.well.span10.list
+    .div.well.span10.offset2.list
       %dl.dl-horizontal{id: "listing_#{listing.id}"}
         %dt Title: 
         %dd= listing.title
         %dt Description:
         %dd= listing.description
+        %a.btn.offset7.span1.hide.edit-btn{id: "edit-listings-btn-listing_#{listing.id}"} Edit
+        %a.btn.btn-danger.span1.hide.delete-btn{id: "delete-listings-btn-listing_#{listing.id}"} Delete
+.div.modal.hide.fade#delete-confirmation
+  .modal-header
+    %button.close{type: "button", data: {dismiss: "modal"}} &times;
+    %h3 Are you sure?
+  .modal-body
+    %p Are you sure you would like to delete this listing?
+  .modal-footer
+    %a.btn#cancel-listing-delete-btn{href: "#", data: {dismiss: "modal"}} Cancel
+    %button.btn.btn-danger#delete-listing-btn Delete
+%p.hide#clicked-id

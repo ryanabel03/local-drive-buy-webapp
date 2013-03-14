@@ -1,15 +1,18 @@
 require "spec_helper"
 
 describe "Listings" do
+  before do
+    as_a_user
+  end
+
   it "allows you to create and delete listings" do
     visit root_path
-    click_link "Listings"
 
     page.should have_content "Your Listings"
-    
-    click_button "Add Listing"
 
-    page.should have_content "Listing Title"
+    find("#add_listing_img").click
+
+    page.should have_content "Title"
     page.should have_content "Description"
     page.should have_content "Address"
     page.should have_content "Line 2"
@@ -19,7 +22,7 @@ describe "Listings" do
     page.should have_content "Categories"
     # page.should have_content "Image"
 
-    fill_in "Listing Title", with: "My Listing"
+    fill_in "Title", with: "My Listing"
     fill_in "Description", with: "Some description for listing 1."
     fill_in "Address", with: "111 Cherry St."
     fill_in "Line 2", with: "Apt E5"
@@ -38,5 +41,13 @@ describe "Listings" do
     page.should have_content "My Listing"
     page.should have_content "Some description for listing 1."
     page.should_not have_selector "listing-input"
+
+    hover_over_row "My Listing"
+    click_link "Delete"
+
+    page.should have_content "Are you sure?"
+    click_button "Delete"
+
+    page.should_not have_content "My Listing"
   end
 end

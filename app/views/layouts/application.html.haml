@@ -11,7 +11,8 @@
         %ul.nav
           = nav_link "Sign Up", tab: :password
         %ul.nav
-          = nav_link "Sign In", tab: :password
+          - if current_user 
+            = link_to "Sign out", destroy_user_session_path, method: "DELETE"
     - if notice.present?
       %p{:class => "notice"}= notice
     - if alert.present?

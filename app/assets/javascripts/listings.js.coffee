@@ -1,12 +1,23 @@
 $ = jQuery
 
 $ ->
-  $(".well.list").mouseenter ->
-    console.log $(this).closest("dl").append('<button value="Edit" id="listing-edit-btn">').button()
-    $("#edit-listings-btn").show()
-    $("#delete-listings-btn").show()
+  $(".div.list dl").mouseenter ->
+    listing_id = $(this).closest("dl").attr("id")
+    $("#edit-listings-btn-#{listing_id}").show()
+    $("#delete-listings-btn-#{listing_id}").show()
 
-  $(".well.list").mouseleave ->
-    $(this).closest("dl").append('<input type="button" value="Edit" id="listing-edit-btn">').button()
-    $("#edit-listings-btn").hide()
-    $("#delete-listings-btn").hide()
+  $(".div.list dl").mouseleave ->
+    listing_id = $(this).closest("dl").attr("id")
+    $("#clicked-id").val(null)
+    $("#edit-listings-btn-#{listing_id}").hide()
+    $("#delete-listings-btn-#{listing_id}").hide()
+
+  $(".delete-btn").click ->
+    listing_id = $(this).closest("dl").attr("id").split("_")[1]
+    $("#clicked-id").val(listing_id)
+    console.log($("#clicked-id").val())
+    $("#delete-confirmation").modal("show")
+
+  $(".edit-btn").click ->
+    listing_id = $(this).closest("dl").attr("id").split("_")[1]
+    console.log listing_id
