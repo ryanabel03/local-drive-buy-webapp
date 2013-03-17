@@ -2,7 +2,7 @@ LocalDriveBuyWebapp::Application.routes.draw do
   devise_for :users
 
   root to: "listings#show"
-  resource :listings
+  resources :listings
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

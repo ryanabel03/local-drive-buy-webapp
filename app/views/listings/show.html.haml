@@ -1,8 +1,10 @@
 %h2.offset1 Your Listings
 .row
   .div.extrabottom.offset12
-    =link_to image_tag("green-plus-sign-th.png", class: "add_listing_img", id: "add_listing_img"), new_listings_path() 
+    =link_to image_tag("green-plus-sign-th.png", class: "add_listing_img", id: "add_listing_img"), new_listing_path() 
 
+-if @listings.empty?
+  %p.offset2.span6.alert.alert-info You currently have no listings. Click the green '+' to add a new listing.
 -@listings.each do |listing|
   .row
     .div.well.span10.offset2.list
@@ -11,15 +13,15 @@
         %dd= listing.title
         %dt Description:
         %dd= listing.description
+        .div.offset7.span1
+          = button_to "Delete", listing_path(listing.id), method: "delete", confirm: "Are you sure?", class: "btn btn-danger hide", id: "delete-listings-btn-listing_#{listing.id}"
         %a.btn.offset7.span1.hide.edit-btn{id: "edit-listings-btn-listing_#{listing.id}"} Edit
-        %a.btn.btn-danger.span1.hide.delete-btn{id: "delete-listings-btn-listing_#{listing.id}"} Delete
-.div.modal.hide.fade#delete-confirmation
-  .modal-header
-    %button.close{type: "button", data: {dismiss: "modal"}} &times;
-    %h3 Are you sure?
-  .modal-body
-    %p Are you sure you would like to delete this listing?
-  .modal-footer
-    %a.btn#cancel-listing-delete-btn{href: "#", data: {dismiss: "modal"}} Cancel
-    %button.btn.btn-danger#delete-listing-btn Delete
-%p.hide#clicked-id
+-# .div.modal.hide.fade#delete-confirmation
+-#   .modal-header
+-#     %button.close{type: "button", data: {dismiss: "modal"}} &times;
+-#     %h3 Are you sure?
+-#   .modal-body
+-#     %p Are you sure you would like to delete this listing?
+-#   .modal-footer
+-#     %a.btn#cancel-listing-delete-btn{href: "#", data: {dismiss: "modal"}} Cancel
+-#     %button.btn.btn-danger#delete-listing-btn Delete

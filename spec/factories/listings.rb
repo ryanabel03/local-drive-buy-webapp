@@ -2,7 +2,8 @@ FactoryGirl.define do
   factory :listing do |f|
     f.title "Listing 1"
     f.description "Some awesome description for the first listing"
-    f.address "111 Cherry St."
+    f.address_one "111 Cherry St."
+    f.address_two "Apt E 5"
     f.city "Holland"
     f.state "MI"
     f.zip 49460
@@ -11,7 +12,8 @@ FactoryGirl.define do
   factory :invalid_listing, class: Listing do |f|
     f.title "Listing 1"
     f.description "Some awesome description for the first listing"
-    f.address "111 Cherry St."
+    f.address_one "111 Cherry St."
+    f.address_two "Apt E 5"
     f.city "Holland"
     f.state "MI"
     f.zip nil 

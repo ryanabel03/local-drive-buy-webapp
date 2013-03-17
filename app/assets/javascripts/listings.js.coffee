@@ -8,16 +8,13 @@ $ ->
 
   $(".div.list dl").mouseleave ->
     listing_id = $(this).closest("dl").attr("id")
-    $("#clicked-id").val(null)
     $("#edit-listings-btn-#{listing_id}").hide()
     $("#delete-listings-btn-#{listing_id}").hide()
 
   $(".delete-btn").click ->
     listing_id = $(this).closest("dl").attr("id").split("_")[1]
-    $("#clicked-id").val(listing_id)
-    console.log($("#clicked-id").val())
-    $("#delete-confirmation").modal("show")
+    $("#clicked-id").html(listing_id)
 
   $(".edit-btn").click ->
     listing_id = $(this).closest("dl").attr("id").split("_")[1]
-    console.log listing_id
+

@@ -1,34 +1,35 @@
-%h2 Create A Listing
+%h2.offset1 Create A Listing
 =form_tag listings_path, :class => "form-horizontal" do
-  .control-group
+  .control-group.offset2
     .control-label{for: "listings_title"}= label_tag(:listings_title, "Title")
     .controls
       = text_field(:listings, :title)
-  .control-group
+  .control-group.offset2
     .control-label{for: "listings_description"}= label_tag(:listings_description, "Description")
     .controls
-      = text_area(:listings, :description)
-  %label.checkbox.inline Categories
+      = text_area(:listings, :description, cols: 40, rows: 5)
+  %label.checkbox.inline.offset2 Categories
   - categories.each do |category|
-    %input{type: "checkbox", id: category, value: category}=category
-  .control-group
+    %input{type: "checkbox", id: category, value: category}= category
+  .control-group.offset2
     .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
     .controls
       = text_field(:listings, :address_one)
-  .control-group
+  .control-group.offset2
     .control-label{for: "listings_address_two"}= label_tag(:listings_address_two, "Line 2")
     .controls
       = text_field(:listings, :address_two)
-  .control-group
+  .control-group.offset2
     .control-label{for: "listings_city"}= label_tag(:listings_city, "City")
     .controls
       = text_field(:listings, :city)
-  .control-group
+  .control-group.offset2
     .control-label{for: "state"}= label_tag(:listings_state, "State")
     .controls
       = select(:listings, :state, options_for_select(states))
-  .control-group
+  .control-group.offset2
     .control-label{for: "listings_zip"}= label_tag(:listings_zip, "Zip Code")
     .controls
       = text_field(:listings, :zip)
-  =submit_tag "Create", :class => "btn btn-primary"
+  .div.offset7
+    =submit_tag "Create", :class => "btn btn-primary"

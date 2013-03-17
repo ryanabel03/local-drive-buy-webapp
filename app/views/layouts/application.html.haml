@@ -10,9 +10,9 @@
           = nav_link "Listings", href: listings_path, tab: :listings
         %ul.nav
           = nav_link "Sign Up", tab: :password
-        %ul.nav
-          - if current_user 
-            = link_to "Sign out", destroy_user_session_path, method: "DELETE"
+        - if current_user 
+          %ul.nav
+            = link_to "Sign out", destroy_user_session_path, class: "signout"
     - if notice.present?
       %p{:class => "notice"}= notice
     - if alert.present?

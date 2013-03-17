@@ -9,6 +9,7 @@ describe "Listings" do
     visit root_path
 
     page.should have_content "Your Listings"
+    page.should have_content "You currently have no listings. Click the green '+' to add a new listing."
 
     find("#add_listing_img").click
 
@@ -43,11 +44,11 @@ describe "Listings" do
     page.should_not have_selector "listing-input"
 
     hover_over_row "My Listing"
-    click_link "Delete"
-
-    page.should have_content "Are you sure?"
     click_button "Delete"
 
+    page.driver.browser.switch_to.alert.accept
+
     page.should_not have_content "My Listing"
+    page.should have_content "You currently have no listings. Click the green '+' to add a new listing."
   end
 end
