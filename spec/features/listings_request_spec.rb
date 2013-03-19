@@ -5,7 +5,7 @@ describe "Listings" do
     as_a_user
   end
 
-  it "allows you to create and delete listings" do
+  it "allows you to create, edit, and delete listings" do
     visit root_path
 
     page.should have_content "Your Listings"
@@ -42,6 +42,17 @@ describe "Listings" do
     page.should have_content "My Listing"
     page.should have_content "Some description for listing 1."
     page.should_not have_selector "listing-input"
+
+    hover_over_row "My Listing"
+    click_button "Edit"
+
+    page.should have_content "Edit Listing"
+
+    fill_in "Title", with: "Edited Listing"
+    click_button "Finish"
+
+    page.should have_content "Your Listings"
+    page.should have_content "Edit Listing"
 
     hover_over_row "My Listing"
     click_button "Delete"

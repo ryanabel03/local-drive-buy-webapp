@@ -65,4 +65,19 @@ describe ListingsController do
     end
   end
 
+  describe "#update" do
+    before do
+      @listing = Listing.create(attributes_for(:listing))
+      sign_in_user
+    end
+
+    it "updates the listing" do
+      new_listing = @listing
+      new_listing.title = "Edited title"
+
+      put :update, listing: new_listing
+
+      response.should redirect_to listings_path
+    end
+  end
 end

@@ -13,15 +13,7 @@
         %dd= listing.title
         %dt Description:
         %dd= listing.description
-        .div.offset7.span1
-          = button_to "Delete", listing_path(listing.id), method: "delete", confirm: "Are you sure?", class: "btn btn-danger hide", id: "delete-listings-btn-listing_#{listing.id}"
-        %a.btn.offset7.span1.hide.edit-btn{id: "edit-listings-btn-listing_#{listing.id}"} Edit
--# .div.modal.hide.fade#delete-confirmation
--#   .modal-header
--#     %button.close{type: "button", data: {dismiss: "modal"}} &times;
--#     %h3 Are you sure?
--#   .modal-body
--#     %p Are you sure you would like to delete this listing?
--#   .modal-footer
--#     %a.btn#cancel-listing-delete-btn{href: "#", data: {dismiss: "modal"}} Cancel
--#     %button.btn.btn-danger#delete-listing-btn Delete
+        .div.offset8.span1.extrabottom
+          %a.btn.hide.edit-btn{id: "edit-listings-btn-listing_#{listing.id}", href: edit_listing_path(listing.id)} Edit
+        .div.offset8.span1
+          =button_to "Delete", listing_path(listing.id), method: "delete", confirm: "Are you sure?", class: "btn btn-danger hide delete-btn", id: "delete-listings-btn-listing_#{listing.id}"

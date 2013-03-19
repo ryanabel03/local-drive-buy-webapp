@@ -1,15 +1,17 @@
-.well.span3.center.floatnone.extratop
-  %h2.extrabottom Sign in
+.well.span7.center.floatnone.extratop
+  %h2.extrabottom.offset1 Sign in
   = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "form-horizontal"}) do |f|
-    .control-group
+    .control-group.offset2
       %label{:for => "email"} Email 
       = f.email_field :email
-    .control-group
+    .control-group.offset2
       %label{:for => "password"} Password
       = f.password_field :password
-    .control-group
+    .control-group.offset2
       %label.checkbox
         = f.check_box :remember_me
         Remember me
     .row
-      %button.btn.btn-primary.span3{:type => "submit"} Sign in
+      %button.btn.btn-primary.span2.offset3{:type => "submit"} Sign in
+    .div.offset2.extratop
+      =render "devise/shared/links"

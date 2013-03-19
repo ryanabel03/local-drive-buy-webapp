@@ -1,0 +1,7 @@
+%h2.offset1 Edit Listing
+.row
+  .div.offset2
+    = form_for(@listing) do |f| 
+      = render "shared/fields", f: f
+      .div.offset2
+        = f.submit "Finish", class: "btn btn-primary"

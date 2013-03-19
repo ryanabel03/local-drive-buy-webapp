@@ -3,6 +3,11 @@ LocalDriveBuyWebapp::Application.routes.draw do
 
   root to: "listings#show"
   resources :listings
+
+  namespace :api do
+    get "listings", action: :listings, as: "listings"
+    get "listings/:category", action: :listings_by_category, as: "listings_by_category"
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
