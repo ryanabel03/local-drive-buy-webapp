@@ -20,7 +20,7 @@ describe "Listings" do
     page.should have_content "City"
     page.should have_content "State"
     page.should have_content "Zip Code"
-    page.should have_content "Categories"
+    page.should have_content "Category"
     # page.should have_content "Image"
 
     fill_in "Title", with: "My Listing"
@@ -29,6 +29,7 @@ describe "Listings" do
     fill_in "Line 2", with: "Apt E5"
     fill_in "City", with: "Grand Rapids"
     page.select "Michigan", from: "listings_state"
+    page.select "Edible", from: "listings_category" 
     # page.select "Furniture", from: "categorypicker"
     fill_in "Zip Code", with: 55555
 

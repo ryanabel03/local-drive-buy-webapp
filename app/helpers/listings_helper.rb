@@ -58,10 +58,28 @@ module ListingsHelper
 
   def categories
     [
-      "Free",
+      "Goods",
+      "Edibles"
+    ]
+  end
+
+  def goods_sub_categories
+    [
+      "Arts & Crafts",
+      "Clothing",
+      "Health & Fitness",
+      "Furniture",
+      "Other"
+    ]
+  end
+
+  def edible_sub_categories
+    [
+      "Brewery / Winery",
       "Farmer's Market",
-      "Brewery/Winery",
-      "Road Stand/Edibles"
+      "Restaurant",
+      "Roadside Stand",
+      "U-Pick / Orchard"
     ]
   end
 end

@@ -8,9 +8,21 @@
     .control-label{for: "listings_description"}= label_tag(:listings_description, "Description")
     .controls
       = text_area(:listings, :description, cols: 40, rows: 5)
-  %label.checkbox.inline.offset2 Categories
-  - categories.each do |category|
-    %input{type: "checkbox", id: category, value: category}= category
+  .control-group.offset2
+    .control-label{for: "listings_category"}= label_tag(:listings_category, "Category")
+    .controls
+      =select(:listings, :category, options_for_select(categories))
+  .control-group.offset2.goods-sub-category.hide
+    .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
+    .controls
+      =select(:listings, :sub_category, options_for_select(goods_sub_categories))
+  .control-group.offset2.edible-sub-category.hide
+    .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
+    .controls
+      =select(:listings, :sub_category, options_for_select(edible_sub_categories))
+  -# %label.checkbox.inline.offset2 Categories
+  -# - categories.each do |category|
+  -#   %input{type: "checkbox", id: category, value: category}= category
   .control-group.offset2
     .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
     .controls
