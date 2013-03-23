@@ -18,3 +18,18 @@
 .delete-btn {
   display: block;
 }
+
+.listing-checkbox {
+  display: flex-box;
+  background: gray;
+}
+
+.listing-checkbox:hover {
+  display: flex-box;
+  background: green;
+}
+
+.listing-checkbox:active {
+  display: flex-box;
+  background: green;
+}

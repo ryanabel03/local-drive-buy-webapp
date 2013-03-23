@@ -1,47 +1,66 @@
 %h2.offset1 Create A Listing
 =form_tag listings_path, :class => "form-horizontal" do
-  .control-group.offset2
-    .control-label{for: "listings_title"}= label_tag(:listings_title, "Title")
-    .controls
-      = text_field(:listings, :title)
-  .control-group.offset2
-    .control-label{for: "listings_description"}= label_tag(:listings_description, "Description")
-    .controls
-      = text_area(:listings, :description, cols: 40, rows: 5)
-  .control-group.offset2
-    .control-label{for: "listings_category"}= label_tag(:listings_category, "Category")
-    .controls
-      =select(:listings, :category, options_for_select(categories))
-  .control-group.offset2.goods-sub-category.hide
-    .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
-    .controls
-      =select(:listings, :sub_category, options_for_select(goods_sub_categories))
-  .control-group.offset2.edible-sub-category.hide
-    .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
-    .controls
-      =select(:listings, :sub_category, options_for_select(edible_sub_categories))
-  -# %label.checkbox.inline.offset2 Categories
-  -# - categories.each do |category|
-  -#   %input{type: "checkbox", id: category, value: category}= category
-  .control-group.offset2
-    .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
-    .controls
-      = text_field(:listings, :address_one)
-  .control-group.offset2
-    .control-label{for: "listings_address_two"}= label_tag(:listings_address_two, "Line 2")
-    .controls
-      = text_field(:listings, :address_two)
-  .control-group.offset2
-    .control-label{for: "listings_city"}= label_tag(:listings_city, "City")
-    .controls
-      = text_field(:listings, :city)
-  .control-group.offset2
-    .control-label{for: "state"}= label_tag(:listings_state, "State")
-    .controls
-      = select(:listings, :state, options_for_select(states))
-  .control-group.offset2
-    .control-label{for: "listings_zip"}= label_tag(:listings_zip, "Zip Code")
-    .controls
-      = text_field(:listings, :zip)
-  .div.offset7
-    =submit_tag "Create", :class => "btn btn-primary"
+  .row
+    .div.business_info
+      %h3.offset2 General Information
+      .control-group.offset2
+        .control-label{for: "listings_title"}= label_tag(:listings_title, "Title")
+        .controls
+          = text_field(:listings, :title)
+      .control-group.offset2
+        .control-label{for: "listings_description"}= label_tag(:listings_description, "Description")
+        .controls
+          = text_area(:listings, :description, cols: 40, rows: 5)
+      .control-group.offset2
+        .control-label{for: "listings_category"}= label_tag(:listings_category, "Category")
+        .controls
+          =select(:listings, :category, options_for_select(categories))
+      .control-group.offset2.goods-sub-category.hide
+        .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
+        .controls
+          =select(:listings, :sub_category, options_for_select(goods_sub_categories))
+      .control-group.offset2.edible-sub-category.hide
+        .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
+        .controls
+          =select(:listings, :sub_category, options_for_select(edible_sub_categories))
+      .div.goods_filter.hide
+        %label.checkbox.inline.offset3.extrabottom Filters 
+        - goods_filters.each do |filter|
+          .row
+            .div.btn-group.span5.offset5{data: {toggle: "buttons-checkbox"}}
+              %button.btn.extrabottom.listing-checkbox.offset4.span2{type: "button"}= filter
+      .div.edible_filter.hide
+        %label.checkbox.inline.offset3.extrabottom Filters 
+        - edibles_filters.each do |filter|
+          .row
+            .div.btn-group.span5.offset5{data: {toggle: "buttons-checkbox"}}
+              %button.btn.extrabottom.listing-checkbox.offset4.span2{type: "button"}= filter
+      %button.btn.offset7#to-location-info Next
+  .row
+    .div.location_info.span6.hide
+      %h3.offset2.span4 Location Information
+      .control-group.offset1
+        .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
+        .controls
+          = text_field(:listings, :address_one)
+      .control-group.offset1
+        .control-label{for: "listings_address_two"}= label_tag(:listings_address_two, "Line 2")
+        .controls
+          = text_field(:listings, :address_two)
+      .control-group.offset1
+        .control-label{for: "listings_city"}= label_tag(:listings_city, "City")
+        .controls
+          = text_field(:listings, :city)
+      .control-group.offset1
+        .control-label{for: "state"}= label_tag(:listings_state, "State")
+        .controls
+          = select(:listings, :state, options_for_select(states))
+      .control-group.offset1
+        .control-label{for: "listings_zip"}= label_tag(:listings_zip, "Zip Code")
+        .controls
+          = text_field(:listings, :zip)
+    .div.business_hours.span6.hide
+      %h3.offset2.span4 Location Hours
+      .div.offset5
+        =submit_tag "Create", :class => "btn btn-primary"
+

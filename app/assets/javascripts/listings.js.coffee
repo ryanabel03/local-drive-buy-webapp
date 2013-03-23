@@ -2,14 +2,17 @@ $ = jQuery
 
 toggleSubCategory = ->
   category = $("#listings_category").val()
-  console.log category
 
   if category == "Edibles"
     $(".goods-sub-category").hide()
     $(".edible-sub-category").show()
+    $(".goods_filter").hide()
+    $(".edible_filter").show()
   else
     $(".edible-sub-category").hide()
     $(".goods-sub-category").show()
+    $(".goods_filter").show()
+    $(".edible_filter").hide()
 
 $ ->
   $(document).ready ->
@@ -35,3 +38,9 @@ $ ->
   
   $("#listings_category").change ->
     toggleSubCategory()
+
+  $("#to-location-info").click (e) ->
+    e.preventDefault()
+    $(".business_info").hide()
+    $(".location_info").show()
+    $(".business_hours").show()
