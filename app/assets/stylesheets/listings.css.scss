@@ -1,9 +1,23 @@
 // Place all the styles related to the listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+@import url(http://fonts.googleapis.com/css?family=Economica);
 
-h2 {
-  margin-left: 40px
+.navbar {
+  font-family: 'Economica', sans-serif;
+  font-size: 20px;
+  color: #1d7c84;
+} 
+
+h2, h3 {
+  color: #1d7c84;
+  font-family: 'Economica', sans-serif;
+}
+
+p, label, select, button {
+  font-family: 'Economica', sans-serif;
+  font-size: 20px;
 }
 
 .extrabottom {
@@ -33,17 +47,17 @@ h2 {
 
 .listing-checkbox {
   display: flex-box;
-  background: gray;
+  background: #b3b3b3;
 }
 
 .listing-checkbox:hover {
   display: flex-box;
-  background: green;
+  background: #1d7c84;
 }
 
 .listing-checkbox:active {
   display: flex-box;
-  background: green;
+  background: #1d7c70;
 }
 
 .img-polaroid {

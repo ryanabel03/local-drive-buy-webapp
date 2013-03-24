@@ -2,8 +2,33 @@
 
 @import "twitter/bootstrap";
 
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700);
+
 .well {
   background-color: $notWhite;
   border: 1px solid $gray1;
   padding: 10px 19px 10px 19px;
+}
+
+a {
+  color: #1d7c84;
+}
+
+.signout {
+  font-weight: bold;
+  text-decoration: none;
+  color: #1d7c84;
+}
+
+.signout:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.extratop {
+  margin-top: 16px
+}
+
+label {
+  color: #1d7c84;
 }
