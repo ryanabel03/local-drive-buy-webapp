@@ -44,3 +44,9 @@ $ ->
     $(".business_info").hide()
     $(".location_info").show()
     $(".business_hours").show()
+
+  $("#to-location-imgs").click (e) ->
+    e.preventDefault()
+    $(".listing_images").show()
+    $(".location_info").hide()
+    $(".business_hours").hide()

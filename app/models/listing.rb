@@ -6,4 +6,6 @@ class Listing < ActiveRecord::Base
   validates_presence_of :title, :state, :description
 
   belongs_to :user
+
+  has_many :images
 end

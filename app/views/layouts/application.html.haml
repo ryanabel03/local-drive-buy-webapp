@@ -3,18 +3,22 @@
   %head
     = render partial: "shared/header"
   %body
-    .navbar
-      .navbar-inner
-        %a.brand{href: "#"}
-        %ul.nav
-          = nav_link "Listings", href: listings_path, tab: :listings
-        %ul.nav
-          = nav_link "Sign Up", tab: :password
-        - if current_user 
-          %ul.nav.navbar-text
-            = link_to "Sign out", destroy_user_session_path, class: "signout", method: "DELETE"
-    - if notice.present?
-      %p{:class => "notice"}= notice
-    - if alert.present?
-      %p{:class => "alert"}= alert
-    = yield
+    .row
+      .div.offset6.span6
+        %a= image_tag("ldb_logo.jpg", class: "ldb_logo")
+    .row
+      .navbar.offset1
+        .navbar-inner.span11
+          %ul.nav
+            = nav_link "Listings", href: listings_path, tab: :listings
+          %ul.nav
+            = nav_link "Sign Up", tab: :password
+          - if current_user 
+            %ul.nav.navbar-text.pull-right
+              = link_to "Sign out", destroy_user_session_path, class: "signout", method: "DELETE"
+      - if notice.present?
+        %p{:class => "notice"}= notice
+      - if alert.present?
+        %p{:class => "alert"}= alert
+    .row
+      = yield

@@ -1,8 +1,8 @@
-%h2 Create A Listing
+%h2.offset1 Create A Listing
 =form_tag listings_path, :class => "form-horizontal" do
   .row
     .div.business_info
-      %h3.offset1 General Information
+      %h3.offset2 General Information
       .control-group.offset1
         .control-label{for: "listings_title"}= label_tag(:listings_title, "Title")
         .controls
@@ -38,7 +38,7 @@
       %button.btn.offset6#to-location-info Next
   .row
     .div.location_info.span6.hide
-      %h3.offset1.span5 Location Information
+      %h3.offset2.span5 Location Information
       .control-group.offset1
         .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
         .controls
@@ -60,7 +60,7 @@
         .controls
           = text_field(:listings, :zip)
     .div.business_hours.span6.hide
-      %h3.offset1.span5 Location Hours
+      %h3.offset2.span5 Location Hours
       .div.offset1.inline.extraextrabottom
         %strong.extrabottom Mon:
         %select.span2.extrabottom
@@ -116,6 +116,25 @@
         – 
         %select.span2.extrabottom
           =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-      .div.offset5
-        =submit_tag "Create", :class => "btn btn-primary"
+      %button.btn.offset6#to-location-imgs Next
+      -# .div.offset5
+      -#   =submit_tag "Create", :class => "btn btn-primary"
 
+  .row.listing_images.hide
+    %h3.offset2 Location Images
+    .div.offset2
+      =image_tag("ao.jpg", class: "img-rounded extrabottom")
+      =image_tag("ao.jpg", class: "img-rounded extrabottom offset3")
+      .div
+        %button.btn.offset2 Upload
+        %button.btn.offset6 Upload
+    .div.offset2
+      =image_tag("ao.jpg", class: "img-rounded extrabottom")
+      =image_tag("ao.jpg", class: "img-rounded extrabottom offset3")
+      .div
+        %button.btn.offset2 Upload
+        %button.btn.offset6 Upload
+      -# %img.img-rounded.extrabottom{src: "#", height: "300px", width: "300px"}
+      -# .div
+      -#   %img.img-rounded{src: "#", height: "300px", width: "300px"}
+      -#   %img.img-rounded{src: "#", height: "300px", width: "300px"}
