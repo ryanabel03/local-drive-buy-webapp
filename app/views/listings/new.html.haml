@@ -1,44 +1,44 @@
-%h2.offset1 Create A Listing
+%h2 Create A Listing
 =form_tag listings_path, :class => "form-horizontal" do
   .row
     .div.business_info
-      %h3.offset2 General Information
-      .control-group.offset2
+      %h3.offset1 General Information
+      .control-group.offset1
         .control-label{for: "listings_title"}= label_tag(:listings_title, "Title")
         .controls
           = text_field(:listings, :title)
-      .control-group.offset2
+      .control-group.offset1
         .control-label{for: "listings_description"}= label_tag(:listings_description, "Description")
         .controls
           = text_area(:listings, :description, cols: 40, rows: 5)
-      .control-group.offset2
+      .control-group.offset1
         .control-label{for: "listings_category"}= label_tag(:listings_category, "Category")
         .controls
           =select(:listings, :category, options_for_select(categories))
-      .control-group.offset2.goods-sub-category.hide
+      .control-group.offset1.goods-sub-category.hide
         .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
         .controls
           =select(:listings, :sub_category, options_for_select(goods_sub_categories))
-      .control-group.offset2.edible-sub-category.hide
+      .control-group.offset1.edible-sub-category.hide
         .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
         .controls
           =select(:listings, :sub_category, options_for_select(edible_sub_categories))
       .div.goods_filter.hide
-        %label.checkbox.inline.offset3.extrabottom Filters 
+        %label.checkbox.inline.offset2.extrabottom Filters 
         - goods_filters.each do |filter|
           .row
-            .div.btn-group.span5.offset5{data: {toggle: "buttons-checkbox"}}
+            .div.btn-group.span2.offset4{data: {toggle: "buttons-checkbox"}}
               %button.btn.extrabottom.listing-checkbox.offset4.span2{type: "button"}= filter
       .div.edible_filter.hide
-        %label.checkbox.inline.offset3.extrabottom Filters 
+        %label.checkbox.inline.offset2.extrabottom Filters 
         - edibles_filters.each do |filter|
           .row
-            .div.btn-group.span5.offset5{data: {toggle: "buttons-checkbox"}}
+            .div.btn-group.span2.offset4{data: {toggle: "buttons-checkbox"}}
               %button.btn.extrabottom.listing-checkbox.offset4.span2{type: "button"}= filter
-      %button.btn.offset7#to-location-info Next
+      %button.btn.offset6#to-location-info Next
   .row
     .div.location_info.span6.hide
-      %h3.offset2.span4 Location Information
+      %h3.offset1.span5 Location Information
       .control-group.offset1
         .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
         .controls
@@ -60,7 +60,62 @@
         .controls
           = text_field(:listings, :zip)
     .div.business_hours.span6.hide
-      %h3.offset2.span4 Location Hours
+      %h3.offset1.span5 Location Hours
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Mon:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Tue:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Wed:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Thu:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Fri:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Sat:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+
+      .div.offset1.inline.extraextrabottom
+        %strong.extrabottom Sun:
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+        – 
+        %select.span2.extrabottom
+          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
       .div.offset5
         =submit_tag "Create", :class => "btn btn-primary"
 
