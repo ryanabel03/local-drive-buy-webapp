@@ -9,9 +9,11 @@
   .row
     .div.well.span10.offset2.list
       %dl.dl-horizontal{id: "listing_#{listing.id}"}
-        %dt Title: 
+        %dt
+          %strong Title: 
         %dd= listing.title
-        %dt Description:
+        %dt
+          %strong Description:
         %dd= listing.description
         .div.offset8.span1.extrabottom
           %a.btn.hide.edit-btn{id: "edit-listings-btn-listing_#{listing.id}", href: edit_listing_path(listing.id)} Edit

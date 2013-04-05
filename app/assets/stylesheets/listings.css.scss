@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Special+Elite);
-@import url(http://fonts.googleapis.com/css?family=Economica);
+@import url(http://fonts.googleapis.com/css?family=Economica:400,700);
 
 .navbar {
   font-family: 'Economica', sans-serif;
@@ -10,12 +10,16 @@
   color: #1d7c84;
 } 
 
+body {
+  background-image:url("/assets/fabric_plaid.png");
+}
+
 h2, h3 {
   color: #1d7c84;
   font-family: 'Economica', sans-serif;
 }
 
-p, label, select, button {
+p, label, select, button, .list, .btn {
   font-family: 'Economica', sans-serif;
   font-size: 20px;
 }

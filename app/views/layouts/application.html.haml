@@ -5,17 +5,23 @@
   %body
     .row
       .div.offset5.span6
-        %a= image_tag("ldb_logo.jpg", class: "ldb_logo")
+        %a= image_tag("ldb_logo.png", class: "ldb_logo")
     .row
       .navbar.offset1
         .navbar-inner.span11
-          %ul.nav
-            = nav_link "Listings", href: listings_path, tab: :listings
-          %ul.nav
-            = nav_link "Sign Up", tab: :password
           - if current_user 
+            %ul.nav
+              = nav_link "Profile", tab: :profile
             %ul.nav.navbar-text.pull-right
               = link_to "Sign out", destroy_user_session_path, class: "signout", method: "DELETE"
+          - else
+            %ul.nav
+              = nav_link "Sign Up", tab: :password
+            %ul.nav.navbar-text.pull-right
+              = link_to "Sign In", new_user_session_path, class: "signout"
+          %ul.nav
+            = nav_link "Listings", href: listings_path, tab: :listings
+    .row.offset1
       - if notice.present?
         %p{:class => "notice"}= notice
       - if alert.present?
