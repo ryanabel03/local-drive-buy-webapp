@@ -2,19 +2,13 @@
 =f.text_field :title
 
 =f.label :description
-=f.text_area :description
+=f.text_area :description, cols: 40, rows: 5
 
-=f.label :address_one
-=f.text_field :address_one
+=f.label :category
+=f.select :category, options_for_select(categories), id: "listings_category", selected: @listing.category.to_i 
 
-=f.label :address_two
-=f.text_field :address_two
+.hide.goods-sub-category=f.label :sub_category
+.hide.goods-sub-category=f.select :sub_category, options_for_select(goods_sub_categories), selected: @listing.sub_category.to_i
 
-=f.label :city
-=f.text_field :city
-
-=f.label :state
-=f.select :state, options_for_select(states)
-
-=f.label :zip
-=f.text_field :zip
+.hide.edible-sub-category=f.label :sub_category
+.hide.edible-sub-category=f.select :sub_category, options_for_select(edible_sub_categories), selected: @listing.sub_category.to_i

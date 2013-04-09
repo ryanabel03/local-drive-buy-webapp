@@ -39,6 +39,20 @@ $ ->
   $("#listings_category").change ->
     toggleSubCategory()
 
+  $("#listing_category").change ->
+    category = $("#listing_category").val()
+
+    if category == "Edibles"
+      $(".goods-sub-category").hide()
+      $(".edible-sub-category").show()
+      $(".goods_filter").hide()
+      $(".edible_filter").show()
+    else
+      $(".edible-sub-category").hide()
+      $(".goods-sub-category").show()
+      $(".goods_filter").show()
+      $(".edible_filter").hide()
+
   $("#to-location-info").click (e) ->
     e.preventDefault()
     $(".business_info").hide()

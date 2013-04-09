@@ -35,97 +35,97 @@
           .row
             .div.btn-group.span2.offset4{data: {toggle: "buttons-checkbox"}}
               %button.btn.extrabottom.listing-checkbox.offset4.span2{type: "button"}= filter
-      %button.btn.offset6#to-location-info Next
-  .row
-    .div.location_info.span6.hide
-      %h3.offset2.span5 Location Information
-      .control-group.offset1
-        .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
-        .controls
-          = text_field(:listings, :address_one)
-      .control-group.offset1
-        .control-label{for: "listings_address_two"}= label_tag(:listings_address_two, "Line 2")
-        .controls
-          = text_field(:listings, :address_two)
-      .control-group.offset1
-        .control-label{for: "listings_city"}= label_tag(:listings_city, "City")
-        .controls
-          = text_field(:listings, :city)
-      .control-group.offset1
-        .control-label{for: "state"}= label_tag(:listings_state, "State")
-        .controls
-          = select(:listings, :state, options_for_select(states))
-      .control-group.offset1
-        .control-label{for: "listings_zip"}= label_tag(:listings_zip, "Zip Code")
-        .controls
-          = text_field(:listings, :zip)
-    .div.business_hours.span6.hide
-      %h3.offset2.span5 Location Hours
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Mon:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+      .offset6= submit_tag("Create", class: "btn btn-primary")
+  -# .row
+  -#   .div.location_info.span6.hide
+  -#     %h3.offset2.span5 Location Information
+  -#     .control-group.offset1
+  -#       .control-label{for: "listings_address_one"}= label_tag(:listings_address_one, "Address") 
+  -#       .controls
+  -#         = text_field(:listings, :address_one)
+  -#     .control-group.offset1
+  -#       .control-label{for: "listings_address_two"}= label_tag(:listings_address_two, "Line 2")
+  -#       .controls
+  -#         = text_field(:listings, :address_two)
+  -#     .control-group.offset1
+  -#       .control-label{for: "listings_city"}= label_tag(:listings_city, "City")
+  -#       .controls
+  -#         = text_field(:listings, :city)
+  -#     .control-group.offset1
+  -#       .control-label{for: "state"}= label_tag(:listings_state, "State")
+  -#       .controls
+  -#         = select(:listings, :state, options_for_select(states))
+  -#     .control-group.offset1
+  -#       .control-label{for: "listings_zip"}= label_tag(:listings_zip, "Zip Code")
+  -#       .controls
+  -#         = text_field(:listings, :zip)
+  -#   .div.business_hours.span6.hide
+  -#     %h3.offset2.span5 Location Hours
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Mon:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
 
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Tue:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Tue:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
 
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Wed:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Wed:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
 
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Thu:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Thu:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
 
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Fri:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Fri:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
 
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Sat:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Sat:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
 
-      .div.offset1.inline.extraextrabottom
-        %strong.extrabottom Sun:
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-        – 
-        %select.span2.extrabottom
-          =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
-      %button.btn.offset6#to-location-imgs Next
-      -# .div.offset5
-      -#   =submit_tag "Create", :class => "btn btn-primary"
+  -#     .div.offset1.inline.extraextrabottom
+  -#       %strong.extrabottom Sun:
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#       – 
+  -#       %select.span2.extrabottom
+  -#         =options_for_select(create_hours(start_time: 5.hours, end_time: 23.hours, increment: 15.minutes))
+  -#     %button.btn.offset6#to-location-imgs Next
+  -#     -# .div.offset5
+  -#     -#   =submit_tag "Create", :class => "btn btn-primary"
 
-  .row.listing_images.hide
-    %h3.offset2 Location Images
-    .div.offset2
-      =image_tag("ao.jpg", class: "img-rounded extrabottom")
-      .div
-        %button.btn.offset2 Upload
+  -# .row.listing_images.hide
+  -#   %h3.offset2 Location Images
+  -#   .div.offset2
+  -#     =image_tag("ao.jpg", class: "img-rounded extrabottom")
+  -#     .div
+  -#       %button.btn.offset2 Upload
     -#   =image_tag("ao.jpg", class: "img-rounded extrabottom offset3")
       -# .div
       -#   %button.btn.offset2 Upload
