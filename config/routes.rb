@@ -8,9 +8,8 @@ LocalDriveBuyWebapp::Application.routes.draw do
     get "/users/:id", to: "users#show", as: "profile"
   end
 
-  namespace :api do
-    get "listings", action: :listings, as: "listings"
-    get "listings/:category", action: :listings_by_category, as: "listings_by_category"
+  resource :api do
+    get 'listings', to: 'api#listings'
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

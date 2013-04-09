@@ -2,11 +2,18 @@ class ListingsController < ApplicationController
   before_filter :authenticate_user!
 
   def show
-    @listings = current_user.listings 
+    @listings = []
+    if current_user.listings
+      @listings = current_user.listings 
+    end
   end
 
   def index 
-    redirect_to action: "show"
+    @listings = []
+    if current_user.listings
+      @listings = current_user.listings 
+    end
+    render action: "show"
   end
 
   def create

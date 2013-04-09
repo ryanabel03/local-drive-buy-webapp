@@ -103,6 +103,8 @@ GEM
     pg (0.15.1)
     pg (0.15.1-x86-mingw32)
     polyglot (0.3.3)
+    rabl (0.8.3)
+      activesupport (>= 2.3.14)
     rack (1.4.4)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -189,6 +191,7 @@ DEPENDENCIES
   mocha
   paperclip (~> 3.0)
   pg
+  rabl
   rails (= 3.2.9)
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
