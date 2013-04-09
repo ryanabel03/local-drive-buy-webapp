@@ -1,12 +1,8 @@
-@import 'colors';
-
 @import "twitter/bootstrap";
 
-@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700);
-
 .well {
-  background-color: $notWhite;
-  border: 1px solid $gray1;
+  background-color: white;
+  border: 1px solid gray;
   padding: 10px 19px 10px 19px;
 }
 
