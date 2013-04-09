@@ -7,13 +7,11 @@ gem 'devise'
 gem 'js-routes'
 gem 'paperclip', "~> 3.0"
 gem 'sass-rails',   '~> 3.2.3'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :production do
-  gem 'pg'
-end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,7 +30,6 @@ group :test, :development do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'sqlite3'
   gem 'mocha', :require => false
 end
 
