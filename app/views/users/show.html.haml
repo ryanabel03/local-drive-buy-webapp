@@ -1,11 +1,15 @@
 .offset1
   %h2 Profile
-  .div
-    %label.span2 First Name:
-    %p=@user.first_name
-  .div
-    %label.span2 Last Name:
-    %p=@user.last_name
-  .div
-    %label.span2 Email:
-    %p=@user.email
+  .offset1
+    .div
+      .row
+        %label.span2 First Name:
+        %p=@user.first_name
+    .div
+      .row
+        %label.span2 Last Name:
+        %p=@user.last_name
+    .div
+      .row
+        %label.span2 Email:
+        %p=@user.email

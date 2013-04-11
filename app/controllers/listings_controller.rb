@@ -13,7 +13,6 @@ class ListingsController < ApplicationController
     if current_user.listings
       @listings = current_user.listings 
     end
-    render action: "show"
   end
 
   def create

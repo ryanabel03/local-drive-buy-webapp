@@ -4,9 +4,7 @@ LocalDriveBuyWebapp::Application.routes.draw do
   root to: "users#show"
   resources :listings
 
-  devise_scope :users do
-    get "/users/:id", to: "users#show", as: "profile"
-  end
+  match "/profile", to: "users#show", as: "profile"
 
   resource :api do
     get 'listings', to: 'api#listings'

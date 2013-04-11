@@ -5,10 +5,10 @@
 =f.text_area :description, cols: 40, rows: 5
 
 =f.label :category
-=f.select :category, options_for_select(categories), id: "listings_category", selected: @listing.category.to_i 
+=f.select :category, options_for_select(categories, @listing.category), id: "listings_category"
 
 .hide.goods-sub-category=f.label :sub_category
-.hide.goods-sub-category=f.select :sub_category, options_for_select(goods_sub_categories), selected: @listing.sub_category.to_i
+.hide.goods-sub-category=f.select :sub_category, options_for_select(goods_sub_categories, @listing.sub_category)
 
 .hide.edible-sub-category=f.label :sub_category
-.hide.edible-sub-category=f.select :sub_category, options_for_select(edible_sub_categories), selected: @listing.sub_category.to_i
+.hide.edible-sub-category=f.select :sub_category, options_for_select(edible_sub_categories, @listing.sub_category)
