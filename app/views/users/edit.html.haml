@@ -1,0 +1,8 @@
+.offset1
+  %h2 Edit Profile
+  =form_for(@user, url: {action: "update", controller: "users"}, method: "PUT") do |f|
+    =f.label :first_name
+    =f.text_field :first_name
+
+    =f.submit("Finish")
+

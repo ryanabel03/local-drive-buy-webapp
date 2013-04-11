@@ -1,5 +1,6 @@
-%h2.offset1 Sign up
-=form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+%h2.offset1 Edit User
+
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
   .div.offset2
     = devise_error_messages!
 
@@ -14,14 +15,10 @@
       =f.label :email
       =f.email_field :email
 
-      =f.label :password
-      =f.password_field :password
-
-      =f.label :password_confirmation
-      =f.password_field :password_confirmation
+      =f.label :current_password
+      =f.password_field :current_password
 
   .row.span6
-
     =f.label :city
     =f.text_field :city
 
@@ -31,5 +28,5 @@
     =f.label :zip
     =f.text_field :zip
 
-  .div.offset2
-    =f.submit("Sign up", class: "btn btn-primary")
+    .div.offset2
+      =f.submit("Finish", class: "btn btn-primary")

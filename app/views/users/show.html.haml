@@ -13,3 +13,6 @@
       .row
         %label.span2 Email:
         %p=@user.email
+  .offset4
+    %a.btn{href: edit_user_registration_path(current_user.id)} Edit Profile 
+
