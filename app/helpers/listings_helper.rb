@@ -26,10 +26,10 @@ module ListingsHelper
 
   def goods_filters
     [
-      ["Handmade", 0],
-      ["Locally owned", 1],
-      ["Locally produced", 2],
-      ["Organic materials used", 3]
+      "Handmade",
+      "Locally owned",
+      "Locally produced",
+      "Organic materials used"
     ]
   end
 
