@@ -13,6 +13,9 @@
       .div
         %label.span2 Email:
         %p=@user.email
+      .div
+        %label.span2 Business:
+        %p=@user.business_name
 
     .row.span2.offset4.extratop
       %a.btn{href: edit_user_registration_path(current_user.id)} Edit Profile 
