@@ -1,18 +1,21 @@
 .offset1
   %h2 Profile
   .offset1
-    .div
-      .row
-        %label.span2 First Name:
-        %p=@user.first_name
-    .div
-      .row
-        %label.span2 Last Name:
-        %p=@user.last_name
-    .div
-      .row
-        %label.span2 Email:
-        %p=@user.email
-  .offset4
-    %a.btn{href: edit_user_registration_path(current_user.id)} Edit Profile 
+    .row.span4
+      =image_tag @user.avatar.url(:medium)
+    .row.span6
+      .div
+        .row
+          %label.span2 First Name:
+          %p=@user.first_name
+      .div
+        .row
+          %label.span2 Last Name:
+          %p=@user.last_name
+      .div
+        .row
+          %label.span2 Email:
+          %p=@user.email
 
+  .row.offset10.span2.extrabottom
+    %a.btn{href: edit_user_registration_path(current_user.id)} Edit Profile 
