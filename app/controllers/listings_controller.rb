@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
   end
 
   def create
+    puts params
     @listing = current_user.listings.build(params[:listings])
 
     if @listing.save
