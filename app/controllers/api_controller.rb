@@ -1,5 +1,4 @@
 class ApiController < ApplicationController
-
   def listings
     listings = Listing.all
     listings.each do |listing|
@@ -7,7 +6,7 @@ class ApiController < ApplicationController
       user_info =
         {
           phone: user.phone,
-          avatar: user.avatar.url,
+          avatar: user.avatar,
           business_name: user.business_name,
           city: user.city,
           state: user.state,
