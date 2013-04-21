@@ -15,6 +15,12 @@
         %dt
           %strong Description:
         %dd= listing.description
+        %dt
+          %strong Category:
+        %dd= listing.category
+        %dt
+          %strong Sub-Category:
+        %dd= listing.sub_category
         .div.offset8.span1.extrabottom
           %a.btn.hide.edit-btn{id: "edit-listings-btn-listing_#{listing.id}", href: edit_listing_path(listing.id)} Edit
         .div.offset8.span1
