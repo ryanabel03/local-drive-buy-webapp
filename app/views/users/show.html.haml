@@ -16,6 +16,22 @@
       .div
         %label.span2 Business:
         %p=@user.business_name
+      -if @user.address_one
+        .div
+          %label.span2 Address:
+          %p=@user.address_one
+      -if @user.address_two
+        .div
+          %label.span2 Address Line 2:
+          %p=@user.address_two
+      -if @user.city
+        .div
+          %label.span2 City:
+          %p=@user.city
+      -if @user.zip
+        .div
+          %label.span2 Zip:
+          %p=@user.zip
 
     .row.span2.offset4.extratop
       %a.btn{href: edit_user_registration_path(current_user.id)} Edit Profile 
