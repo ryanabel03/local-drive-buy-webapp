@@ -3,7 +3,7 @@ $ = jQuery
 toggleSubCategory = ->
   category = $("#listings_category").val()
 
-  if category == "1"
+  if category == "Edibles"
     $(".goods-sub-category").hide()
     $(".edible-sub-category").show()
     $(".goods_filter").hide()
@@ -15,9 +15,9 @@ toggleSubCategory = ->
     $(".edible_filter").hide()
 
 toggleEditSubCategory = ->
-    category = $("#listing_category").val()
+    category = $("#listings_category option:selected").val()
 
-    if category == "1"
+    if category == "Edibles"
       $(".goods-sub-category").hide()
       $(".edible-sub-category").show()
       $(".goods_filter").hide()

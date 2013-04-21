@@ -5,7 +5,7 @@
 =f.text_area :description, cols: 40, rows: 5
 
 =f.label :category
-=f.select :category, options_for_select(categories, @listing.category), id: "listings_category"
+#listings_category=f.select :category, options_for_select(categories, @listing.category)
 
 .hide.goods-sub-category=f.label :sub_category
 .hide.goods-sub-category=f.select :sub_category, options_for_select(goods_sub_categories, @listing.sub_category)

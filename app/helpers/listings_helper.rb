@@ -1,26 +1,26 @@
 module ListingsHelper
 
   def categories
-    [["Goods", 0], ["Edibles", 1]]
+    [["Goods", "Goods"], ["Edibles", "Edibles"]]
   end
 
   def goods_sub_categories
     [
-      ["Arts & Crafts", 0], 
-      ["Clothing", 1], 
-      ["Health & Fitness", 2],
-      ["Furniture", 3], 
-      ["Other", 4]
+      ["Arts & Crafts"], 
+      ["Clothing"], 
+      ["Health & Fitness"],
+      ["Furniture"], 
+      ["Other"]
     ]
   end
 
   def edible_sub_categories
     [
-      ["Brewery / Winery", 0],
-      ["Farmer's Market", 1],
-      ["Restaurant", 2],
-      ["Roadside Stand", 3],
-      ["U-Pick / Orchard", 4]
+      ["Brewery / Winery"],
+      ["Farmer's Market"],
+      ["Restaurant"],
+      ["Roadside Stand"],
+      ["U-Pick / Orchard"]
     ]
   end
 
