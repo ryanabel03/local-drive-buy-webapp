@@ -1,37 +1,45 @@
 $ = jQuery
 
+edibleSubCategories = ["Brewery / Winery", "Farmers Market", "Restaurant",
+                       "Roadside Stand", "U-Pick / Orchard"]
+
+goodSubCategories = ["Arts & Crafts", "Clothing", "Health & Fitness", "Furniture", "Other"]
+
+createOption = (display, value) ->
+  "<option value='#{value}'>#{display}</option"
+
+populateSelectBoxWithData = (data) ->
+  $("#listings_sub_category").html("")
+
+  for sub in data
+    $("#listings_sub_category").append(createOption(sub, sub))
+
+populateEditSelectBoxWithData = (data) ->
+  $("#listing_sub_category").html("")
+
+  for sub in data
+    $("#listing_sub_category").append(createOption(sub, sub))
+
+
 toggleSubCategory = ->
   category = $("#listings_category").val()
 
   if category == "Edibles"
-    $(".goods-sub-category").hide()
-    $(".edible-sub-category").show()
-    $(".goods_filter").hide()
-    $(".edible_filter").show()
+    populateSelectBoxWithData(edibleSubCategories)
   else
-    $(".edible-sub-category").hide()
-    $(".goods-sub-category").show()
-    $(".goods_filter").show()
-    $(".edible_filter").hide()
+    populateSelectBoxWithData(goodSubCategories)
 
 toggleEditSubCategory = ->
-    category = $("#listings_category option:selected").val()
+    category = $("#listing_category option:selected").val()
 
     if category == "Edibles"
-      $(".goods-sub-category").hide()
-      $(".edible-sub-category").show()
-      $(".goods_filter").hide()
-      $(".edible_filter").show()
+      populateEditSelectBoxWithData(edibleSubCategories)
     else
-      $(".edible-sub-category").hide()
-      $(".goods-sub-category").show()
-      $(".goods_filter").show()
-      $(".edible_filter").hide()
+      populateEditSelectBoxWithData(goodSubCategories)
 
 $ ->
   $(document).ready ->
     toggleSubCategory()
-    toggleEditSubCategory()
 
   $(".div.list dl").mouseenter ->
     listing_id = $(this).closest("dl").attr("id")
@@ -55,15 +63,3 @@ $ ->
 
   $("#listing_category").change ->
     toggleEditSubCategory()
-
-  $("#to-location-info").click (e) ->
-    e.preventDefault()
-    $(".business_info").hide()
-    $(".location_info").show()
-    $(".business_hours").show()
-
-  $("#to-location-imgs").click (e) ->
-    e.preventDefault()
-    $(".listing_images").show()
-    $(".location_info").hide()
-    $(".business_hours").hide()

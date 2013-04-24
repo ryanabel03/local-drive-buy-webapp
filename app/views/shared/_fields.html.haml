@@ -7,8 +7,9 @@
 =f.label :category
 #listings_category=f.select :category, options_for_select(categories, @listing.category)
 
-.hide.goods-sub-category=f.label :sub_category
-.hide.goods-sub-category=f.select :sub_category, options_for_select(goods_sub_categories, @listing.sub_category)
+=f.label :sub_category
+- if @listing.category == "Edibles"
+  =f.select :sub_category, options_for_select(edible_sub_categories, @listing.sub_category)
+- else
+  =f.select :sub_category, options_for_select(goods_sub_categories, @listing.sub_category)
 
-.hide.edible-sub-category=f.label :sub_category
-.hide.edible-sub-category=f.select :sub_category, options_for_select(edible_sub_categories, @listing.sub_category)

@@ -15,14 +15,10 @@
         .control-label{for: "listings_category"}= label_tag(:listings_category, "Category")
         .controls
           =select(:listings, :category, options_for_select(categories))
-      .control-group.offset1.goods-sub-category.hide
+      .control-group.offset1
         .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
         .controls
-          =select(:listings, :sub_category, options_for_select(goods_sub_categories))
-      .control-group.offset1.edible-sub-category.hide
-        .control-label{for: "listings_sub_category"}= label_tag(:listings_sub_category, "Sub-Category")
-        .controls
-          =select(:listings, :sub_category, options_for_select(edible_sub_categories))
+          =select(:listings, :sub_category, [])
       .div.goods_filter.hide
         %label.checkbox.inline.offset2.extrabottom Filters 
         - goods_filters.each do |filter|
@@ -119,24 +115,3 @@
   -#     %button.btn.offset6#to-location-imgs Next
   -#     -# .div.offset5
   -#     -#   =submit_tag "Create", :class => "btn btn-primary"
-
-  -# .row.listing_images.hide
-  -#   %h3.offset2 Location Images
-  -#   .div.offset2
-  -#     =image_tag("ao.jpg", class: "img-rounded extrabottom")
-  -#     .div
-  -#       %button.btn.offset2 Upload
-    -#   =image_tag("ao.jpg", class: "img-rounded extrabottom offset3")
-      -# .div
-      -#   %button.btn.offset2 Upload
-    -#     %button.btn.offset6 Upload
-    -# .div.offset2
-    -#   =image_tag("ao.jpg", class: "img-rounded extrabottom")
-    -#   =image_tag("ao.jpg", class: "img-rounded extrabottom offset3")
-    -#   .div
-    -#     %button.btn.offset2 Upload
-    -#     %button.btn.offset6 Upload
-      -# %img.img-rounded.extrabottom{src: "#", height: "300px", width: "300px"}
-      -# .div
-      -#   %img.img-rounded{src: "#", height: "300px", width: "300px"}
-      -#   %img.img-rounded{src: "#", height: "300px", width: "300px"}
