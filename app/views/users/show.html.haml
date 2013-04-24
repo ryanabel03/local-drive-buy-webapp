@@ -3,7 +3,7 @@
   .offset1
     .row.span3
       =image_tag(@user.avatar.url(:medium), class: "img-polaroid")
-    .row.span9
+    .row.span12
       .div
         %label.span2 First Name:
         %p=@user.first_name
@@ -20,7 +20,7 @@
         .div
           %label.span2 Address:
           %p=@user.address_one
-      -if @user.address_two
+      -if !@user.address_two.empty?
         .div
           %label.span2 Address Line 2:
           %p=@user.address_two
